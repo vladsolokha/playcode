@@ -10,11 +10,16 @@
 # += if up and -= if down
 # we need to count the number of times number became -
 def hikerValleys(steps, path):
-    h = 0
-    valley = 0
+    h = 0 # can be neg or pos
+    valleyCount = 0 #count everytime h becomes <= 0
     for i in range(steps):
-        
-    return valley 
+        if path[i] == "U":
+            h += 1
+        if path[i] == "D": 
+            h -= 1
+        if path[i] == "D" and h < 0:
+            valleyCount += 1
+    return valleyCount
 
 
 path = 'UDDDUDUU'
