@@ -8,7 +8,7 @@
 
 # have int represent + if above sea level and - below sea level called height or h
 # += if up and -= if down
-# we need to count the number of times number became -
+# we need to count the number of times number went from 0 to a negative value
 def hikerValleys(steps, path):
     h = 0 # can be neg or pos
     valleyCount = 0 #count everytime h becomes <= 0
@@ -17,8 +17,9 @@ def hikerValleys(steps, path):
             h += 1
         if path[i] == "D": 
             h -= 1
-        if path[i] == "D" and h < 0:
+        if path[i] == "D" and h < 0: #this needs true condition only if h became negative not stayed negative
             valleyCount += 1
+            h -= 1
     return valleyCount
 
 
