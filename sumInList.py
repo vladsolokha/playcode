@@ -12,14 +12,14 @@ Bonus: Can you do this in one pass?
 
 def sum_in_list (arr, k):
     for list_number in arr:
-        for next_number in arr:
-            print(list_number)
-            print(next_number)
-            if  == k:
+        for next_number in arr[1:]:
+            print("list_number: %s" % list_number)
+            print("next_number: %s" % next_number)
+            if (list_number+next_number) == k:
                 return True
     return False
 
-numbers_list = [10, 15, 3, 7]
-target = 17
+numbers_list = [10, 15, 11, 50]
+target = 22
 print(sum_in_list(numbers_list, target))
 
