@@ -17,13 +17,18 @@ def hikerValleys(steps, path):
             h += 1
         if path[i] == "D": 
             h -= 1
-        if path[i] == "D" and h < 0: #this needs true condition only if h became negative not stayed negative
+        if path[i] == "D" and h == -1: #this needs true condition only if h became negative not stayed negative
             valleyCount += 1
             h -= 1
     return valleyCount
 
+# For some cases -1 appeared  more than once, therefore if failed the test because 
+# it didn't move from 0 to -1 but moved from -2 to -1 which was an 'U' char
 
 path = 'UDDDUDUU'
+path2 = 'DUDDDUUDUU'
 walk = len(path)
+walk2 = len(path2)
 
 print(hikerValleys(walk, path))
+print(hikerValleys(walk2, path2))
