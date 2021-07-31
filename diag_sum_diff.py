@@ -31,3 +31,29 @@ matrix = [
     [9, -2, -11, 54]
 ]
 print(diagonalDifference(matrix))
+
+
+def plusMinus(arr):
+    # Input: array of positive, negative, and zero integers
+    # Output: the ratio count of each integer rounded to 6 digit precision float
+    total = len(arr)
+    pos_count, neg_count, zero_count = 0,0,0
+    
+    for i in arr:
+        if i > 0:
+            pos_count += 1
+        elif i < 0:
+            neg_count += 1
+        else:
+            zero_count += 1
+    
+    pos_ratio = round(float(pos_count / total), 6)
+    neg_ratio = round(float(neg_count / total), 6)
+    zero_ratio = round(float(zero_count / total), 6)
+    
+    p_print = print(pos_ratio, '\n', neg_ratio, '\n', zero_ratio)
+    return p_print
+
+plusMinusArray = [4, -3, 0, 0, 0, 0, 0, 0, 0, 3, 5, 10, 100, -32, -342, 5, -5]
+plusMinus(plusMinusArray)
+
