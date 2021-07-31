@@ -25,8 +25,9 @@ def diagonalDifference(arr):
         
 
 matrix = [
-    [15, 5, 9],
-    [3, 11, 7],
-    [8, -3, 4]
+    [15, 5, 32, 53],
+    [3, 11, 7, 21],
+    [8, -3, 4, 14],
+    [9, -2, -11, 54]
 ]
 print(diagonalDifference(matrix))
