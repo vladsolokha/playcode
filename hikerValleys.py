@@ -10,20 +10,25 @@
 # += if up and -= if down
 # we need to count the number of times number went from 0 to a negative value
 def hikerValleys(steps, path):
-    h = 0 # can be neg or pos
+    height = 0 # can be neg or pos
     valleyCount = 0 #count everytime h becomes <= 0
-    for i in range(steps):
-        if path[i] == "U":
-            h += 1
-        if path[i] == "D": 
-            h -= 1
-        if path[i] == "D" and h < 0: #this needs true condition only if h became negative not stayed negative
+    for step in path:
+        if step == "U":
+            height += 1
+        if step == "D": 
+            height -= 1
+        if step == "U" and height == 0: #this needs true condition only if h became 0 (we're out of valley) when step is U
             valleyCount += 1
-            h -= 1
+            
     return valleyCount
 
+# For some cases -1 appeared  more than once, therefore if failed the test because 
+# it didn't move from 0 to -1 but moved from -2 to -1 which was an 'U' char
 
 path = 'UDDDUDUU'
+path2 = 'DUDDDUUDUU'
 walk = len(path)
+walk2 = len(path2)
 
 print(hikerValleys(walk, path))
+print(hikerValleys(walk2, path2))
