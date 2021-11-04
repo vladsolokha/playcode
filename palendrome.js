@@ -11,5 +11,6 @@ function palindrome(str) {
   
   
   palindrome("eye"); //returns True
-  palindrome("wjeiransioef"); //returns False
+  palindrome("wjeiransioef"); //returns False                                 
+  
   
