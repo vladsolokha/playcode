@@ -26,9 +26,12 @@ def hikerValleys(steps, path):
 # it didn't move from 0 to -1 but moved from -2 to -1 which was an 'U' char
 
 path = 'UDDDUDUU'
-path2 = 'DUDDDUUDUU'
 walk = len(path)
+path2 = 'DUDDDUUDUU'
 walk2 = len(path2)
+path3 = 'DUUUDUDUDDUDUDUDUUDUDUDDUDUDUDU'
+walk3 = len(path3)
 
-print(hikerValleys(walk, path))
-print(hikerValleys(walk2, path2))
+
+
+print(hikerValleys(walk3, path3))
