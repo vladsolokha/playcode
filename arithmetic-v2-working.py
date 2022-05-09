@@ -67,16 +67,9 @@ def arithmetic_arranger(problems, *calculate):
     totalproblength = len(max(firstnum, secondnum))+2
     thirdline = ('-'*totalproblength)
     print(thirdline, end="    ")
-    
-
-      
-
-   
-    
 
 #  for listofproblems in zip(listofproblems
 #    print(listofproblems)
-  
 
   #return arranged_problems
 
