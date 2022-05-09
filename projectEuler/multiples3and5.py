@@ -9,16 +9,20 @@ def mult_of_3_and_5(goal):
     for i in range(goal):
         if i == 0:
             continue
-        if i % 3 == 0:
+        if i % 5 == 0 and i % 3 == 0:
+            print(i, ' is multiple of 3 and 5')
+            count += 1
+            addition += i
+        elif i % 3 == 0:
             print(i, ' is multiple of 3')
             count += 1
             addition += i
-        if i % 5 == 0:
+        elif i % 5 == 0:
             print(i, ' is multiple of 5')
             count += 1
             addition += i
     return print('count is %d and sum of multiples is %d' % (count, addition))
 
-print(mult_of_3_and_5(10))
+#print(mult_of_3_and_5(10))
 #print(mult_of_3_and_5(100))
-#print(mult_of_3_and_5(1000))
+print(mult_of_3_and_5(1000))

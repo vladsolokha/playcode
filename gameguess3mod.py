@@ -50,8 +50,8 @@ def run():
             checker()
             
         else:
-            break
             rungame = False      
             print('Thanks for playing! Bi Now!\nGame Over')
+            break
 
 run()

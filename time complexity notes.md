@@ -3,7 +3,9 @@
   =( add/remove/search = O(n) linear
 ## array methods
 insert, pop, remove, index
-*append = O(n)* amortized time = adding without dynamically increasing size of memory is O(1) constant =) but occasionally need to allocate more memory is O(n) linear =(
+*append = O(n)* amortized time = adding without dynamically increasing size of 
+memory is O(1) constant =) but occasionally need to 
+allocate more memory is O(n) linear =(
 
 # hash tables
 aka dictionary or map
@@ -24,4 +26,5 @@ when you need to repeatedly add/remove elements at start or end of list
 store elements in sorted order
   =) add/remove/search/min = O(log n) logarithmic
 
-source: (Time complexity of array/list operations)[https://yourbasic.org/algorithms/time-complexity-arrays/]
+source: (Time complexity of array/list operations)
+[https://yourbasic.org/algorithms/time-complexity-arrays/]
