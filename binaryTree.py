@@ -71,10 +71,12 @@ class BinarySearchTree:
     elif value >= self.value:
       self.right = BinarySearchTree(value)
   '''if value of new node (value) is > current node (self.value),
-  go to right subtree, if empty insert, if there is right child make insert new value for whole tree.
+  go to right subtree, if empty insert, if there is right child make insert 
+  new value for whole tree.
   if value of new node (value) is < current node (self.value), 
   go to left subtree. if self.value doesn't have left child insert value. 
-  if left subtree self.value (current node) has left child, insert as new value for BinarySearchTree. 
+  if left subtree self.value (current node) has left child, insert as new 
+  value for BinarySearchTree. 
   '''
   def search(self, value):
     if value < self.value and self.left:
@@ -82,8 +84,10 @@ class BinarySearchTree:
     if value > self.value and self.right:
       return self.right.search(value)
     return value == self.value
-  '''if value is less than node and there is a left child go to left child and do search again.
-  if value is greater than node and there is a right child go to right child and do search again with right child. 
+  '''if value is less than node and there is a left child go to left child 
+  and do search again.
+  if value is greater than node and there is a right child go to right child 
+  and do search again with right child. 
   until value is equal to self.value
   '''
   def remove_node(self, value, parent):
