@@ -22,6 +22,3 @@ def binary_search(data, target):
 for name in names:
     position = binary_search(names, name)
     print(position)
-
-
-        
