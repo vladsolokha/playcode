@@ -1,23 +1,32 @@
 # Programming Challenges
-## coding challenges
-## sandbox of code
-code challenges
-sandbox
+
 Python and JavaScript practice challenges
+All created from scratch
+Some modified and adapted from scratch
 
-# Games included
-see "soloclassbouncegame" 
-see "gameguess3mod"
+## Code Challenges Folder
+Has all code challenges done from either
+Leetcode or HackerRank
 
-## calcFactorial
-Folder containing a simple webpage that calculates factorial
-using recursion
+### Code Challenges / calcFactorial
+A simple webpage that calculates factorial
+Using recursion in JavaScript
 
-## Codility Solutions
-programming challenges completed on codility.com
+## Codility Solutions Folder
+Solutions to programming challenges completed on codility.com
 
-## Dice Roller
-Folder with project dice roller
+## Data Structures Folder
+A list of data structures in Python and JavaScript
+Built from scratch with aid of various web articles and books
 
-## gameguess3mod
-A number guessing game in python
+## Games Folder
+Games built from scratch using Python
+Some games use Tkinter GUI library 
+
+### Games / Dice Roller
+A simple webpage that simulates a dice roll
+The die can be any number of sides
+Can be navigated using keyboard
+
+## Project Euler Folder
+Solutions to projecteuler.net 
