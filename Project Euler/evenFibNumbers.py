@@ -5,22 +5,41 @@ will be:
 By considering the terms in the Fib.seq whose values do not exceed four million
 find the sum of the even-valued terms.
 
-working algorithm:
-create def that takes input number n(ie 4,000,000)
-create def that calculates next fib 
-  fib take input number
-  do fib = fib(n-1) + fib(n-2)
-in definition check if number is even and add to result
-sum result
+Recursive issue = many calculations will become repetitive as sequence is 
+broken down into similar sub problems. 
+O(2^n) time =(
+
+Reduce time complexity to O(n) time by memoizing results in a 
+hashtable (dictionary). 
+In function, set up recusrive base case and compute + memoize in dictionary
+the fib number
+
+working algorithm: 
+create dictionary with initial set of values for 0 and 1
+define function to accept number n to sequence
+have base case to check if n is in dictionary
+  if so, return the key n to dictionary
+add to dictionary at key n the previous 2 recursors ie fib(n-1) + fib(n-2)
+return the dictionary key n
+
+store array milFib comprehention to traverse array and store all numbers 
+up to 4M traverse the array and check if number in array is even
+add even numbers and return result
 ''' 
-def evenFibNumbers(n):
-  result = 0
-  if n == 1:
-    return 1
-  if n == 2:
-    return 2 + result
-  if n > 2:
-    if n % 2 == 0:
-      result += evenFibNumbers(n-1) + evenFibNumbers(n-2)
-  return result
-print(evenFibNumbers(400))
+d = {0: 0, 1: 1}
+def fib(n):
+  print(d)
+  if n in d:
+    return d[n]
+  d[n] = fib(n-1) + fib(n-2)
+  return d[n]
+
+milFib = [fib(n) for n in range(35)]
+result = 0
+for i in milFib:
+    if i % 2 == 0:
+      print('even number', i)
+      result += i
+      print('result', result)
+
+print('sum', result)

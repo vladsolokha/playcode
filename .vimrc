@@ -56,7 +56,7 @@ set gdefault " apply substitutions globally on lines
 set incsearch
 set showmatch
 set hlsearch
-nnoremap <leader><space> :noh<cr> "clear out search by typing ,<space>
+
 " make tab the movement to move around bracket pairs
 nnoremap <tab> %
 vnoremap <tab> %
@@ -87,7 +87,15 @@ nnoremap <leader>w <C-w>v<C-w>l
 
 " <C-<movement-key>> moves around your splits
 nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" ,t tab over instead of gt 
+nnoremap <leader>t gt 
+" ,r tab back instead of gT
+nnoremap <leader>r gT
+
+" make <Enter> in insert mode same as <C-j>
+inoremap <C-j> <Enter>
+" make <C-G><C-K> in insert mode same as <C-K>
+inoremap <C-k> <C-g><C-k>
+" I don't use glyphs almost at all

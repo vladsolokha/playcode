@@ -14,7 +14,7 @@ i   arr             swap    (indicies)
 4   [1,2,3,4,5,7,6] swap    (5,6)
 5   [1,2,3,4,5,6,7] 
 
-it took 5 swaps to sort the array
+it took 6 swaps to sort the array
 '''
 
 sam1 = [4,3,1,2] #returns 3
