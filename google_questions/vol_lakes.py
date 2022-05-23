@@ -80,4 +80,8 @@ Find smaller val in arr to determine who's going to next pos (index)
 Find max val at index and record it to max var
 Compare max num to current arr val if there's a diff, subtract smaller
 num from max and add difference to output = lake, otherwise add 0 to output
+
+time complexity O(n) - store max heights upto point using 2 iterations of
+O(n) each, and update ans using stored values in O(n)
+space complexity O(N) extra space - needs added space for l and r max values
 '''
