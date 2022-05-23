@@ -24,5 +24,9 @@ return key of max value in company
 
 def bestAvgSat(objData):
     # record data in dict
-    companies = {}
-    
+    for key,val in enumerate(objData.items):
+        key = sum(val/len(val))
+    return max(key)
+
+
+d = {DSST: [800, 300], Google: [1000, 200], IBM: [1400, 500]}
