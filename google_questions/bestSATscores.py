@@ -22,7 +22,12 @@ for key,val in enumerate(d.items):
     sum += val
 return key of max value in company
 '''
-
+import csv
+file = open('satData.csv')
+csvreader = csv.reader(file)
+header = [next(csvreader)]
+d = {}
+# https://www.analyticsvidhya.com/blog/2021/08/python-tutorial-working-with-csv-file-for-data-science/
 def bestAvgSat(objData):
     # record data in dict
     for key,val in enumerate(objData.items):
