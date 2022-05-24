@@ -14,11 +14,12 @@ output: the company that has the highest average score
 ignore names
 for each company, record count of co and add to score for that co
 in dictionary
+d = {company: [sum_score, count], company: [sum_score, count]}
 d = {DSST: [800, 300], Google: [1000, 200], IBM: [1400, 500]}
-sum = 0
+max_company = first record from d.company, sum/count
+max_score = score corresponding to the max_company
 for key,val in enumerate(d.items):
     sum += val
-
 return key of max value in company
 '''
 
