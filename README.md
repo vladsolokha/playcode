@@ -8,7 +8,7 @@ Some modified and adapted from scratch
 Has all code challenges done from either
 Leetcode or HackerRank
 
-### Code Challenges / calcFactorial
+#### Code Challenges / calcFactorial
 A simple webpage that calculates factorial
 Using recursion in JavaScript
 
@@ -23,7 +23,7 @@ Built from scratch with aid of various web articles and books
 Games built from scratch using Python
 Some games use Tkinter GUI library 
 
-### Games / Dice Roller
+#### Games / Dice Roller
 A simple webpage that simulates a dice roll
 The die can be any number of sides
 Can be navigated using keyboard
