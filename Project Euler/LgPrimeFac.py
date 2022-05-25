@@ -41,3 +41,5 @@ def prime_factors(n):
 
 prime_factors(test_n)
 prime_factors(problem_n)
+
+# Solution adapted from https://www.geeksforgeeks.org/prime-factor/#:~:text=Prime%20factor%20is%20the%20factor,to%20make%20the%20original%20number.
