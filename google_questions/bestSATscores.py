@@ -1,3 +1,19 @@
+# Using pandas API
+# reference: https://pandas.pydata.org/docs/reference/api/
+import pandas as pd
+# get data from csv and organize in DataFrame (table)
+data = pd.read_csv("google_questions\satData.csv")
+print('All data from .csv\n', data)
+# group data by Company and with SAT means (averages)
+d = data.groupby('Company', sort=False).mean()
+print('Company Average SAT scores\n', d)
+# get company with the maximum mean
+m = d.idxmax(axis=0)
+print('Company with highest average SAT scores\n', m)
+# return company with highest maximum mean
+r = m.iloc[0]
+print('Company with highest average SAT scores = ', r)
+
 '''
 Given CSV file with 1000s of following:
 
@@ -22,17 +38,3 @@ for key,val in enumerate(d.items):
     sum += val
 return key of max value in company
 '''
-import csv
-file = open('satData.csv')
-csvreader = csv.reader(file)
-header = [next(csvreader)]
-d = {}
-# https://www.analyticsvidhya.com/blog/2021/08/python-tutorial-working-with-csv-file-for-data-science/
-def bestAvgSat(objData):
-    # record data in dict
-    for key,val in enumerate(objData.items):
-        key = sum(val/len(val))
-    return max(key)
-
-
-d = {DSST: [800, 300], Google: [1000, 200], IBM: [1400, 500]}
