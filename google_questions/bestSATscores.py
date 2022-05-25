@@ -15,15 +15,18 @@ r = m.iloc[0]
 print('Company with highest average SAT scores = ', r)
 
 '''
-Given CSV file with 1000s of following:
+Given CSV file:
 
-Name, Company, SAT score
-vlad, DSST, 800
-sonny, Google, 1000
-bob, Google, 200
-brian, DSST, 300
-patty, IBM, 1400
-jerry, IBM, 500
+Name,Company,SAT
+vlad,DSST,800
+sonny,Google,1000
+bob,Google,200
+brian,DSST,300
+patty,IBM,1400
+jerry,IBM,500
+tre,DSST,900
+rob,Top,1600
+eric,Bottom,500
 
 output: the company that has the highest average score
 

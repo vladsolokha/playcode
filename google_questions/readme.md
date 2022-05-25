@@ -1,5 +1,5 @@
 # Google Interview Questions
-(Tech Dev Guide With Google)[https://techdevguide.withgoogle.com/paths/interview/]
+[Tech Dev Guide With Google](https://techdevguide.withgoogle.com/paths/interview/)
 
 ## Former questions in interviews
 compression and decompression
