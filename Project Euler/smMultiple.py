@@ -26,25 +26,61 @@ if not divisible (mainum % divider != 0):
 # print(smallest_multiple(20)) # 232792560
 
 # Optimized
-import math
-# Create array of primes p
-p = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97]
-def sm_mult(n, p):
-    k = n
-    result = 1
-    i = 1
-    a = [i for i in range(i)]
-    check = True
-    limit = math.sqrt(k)
-    while p[i] <= k:
-        a[i].append(1) 
-        if check:
-            if p[i] <= limit:
-                a[i].append(math.log(k) // math.log(p[i]))
+def findprimes(n):
+    primes = [2]
+    for i in range(3, n+1):
+        for j in primes:
+            if j == primes[len(primes)-1]:
+                primes = primes + [i]
+            if i % j == 0:
+                break
             else:
-                check = False
-        result = result * p[i] ** a[i]
-        i += 1
-    return result
+                continue
+    return primes
 
-print(sm_mult(20, p))
+print(findprimes(100))
+
+def findfactors(n):
+    primes = findprimes(n)
+    factors = []
+    for i in range(n):
+        for j in range(i,n):
+            if i * j == n: 
+                if i not in primes:
+                    if j not in primes:
+                        factors = findfactors(i) + findfactors(j)
+                    else:
+                        factors = [j] + findfactors(i)
+                else:
+                    if j not in primes:
+                        if i not in primes:
+                            factors = findfactors(i) + findfactors(j)
+                        else:
+                            factors = [i] + findfactors(j)
+                    else:
+                        factors = [i,j]
+                break
+    if n in primes:
+        factors = [n]
+    return factors
+
+def findsmallest(n):
+    primes = findprimes(n)
+    primesnum = [0] * len(primes)
+    allzefac = []
+    for i in range(n+1):
+        allzefac = allzefac + [findfactors(i)]
+    for i in primes:
+        for j in allzefac:
+            if j.count(i) > primesnum[primes.index(i)]:
+                primesnum[primes.index(i)] = j.count(i)
+
+    summy = 1
+    print('primes: ',primes)
+    print('prime sum nums: ', primesnum)
+    for i in range(len(primes)):
+        if primesnum[i] != 0:
+            summy = summy * primes[i] ** primesnum[i]
+    return summy
+
+print(findsmallest(200))
