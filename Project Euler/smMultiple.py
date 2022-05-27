@@ -84,3 +84,18 @@ def findsmallest(n):
     return summy
 
 print(findsmallest(200))
+
+# resource 
+# mickyhowells https://projecteuler.net/thread=5;page=3#4213
+'''
+Upon reading more discussions
+there's a formula
+calculate all primes
+use the primes and multiply them to get to answer
+use lowest common multiples and their prime factorizations
+to get highest degree of each prime
+f(n) = LCM(1,2,...,n) = for every p <= n, p^(log(n)//log(p)), p is prime
+n is the number we put into the function. 
+f(20) = 2^(log(20)//log(2)) * 3^(log(20)//log(3)) * 5^(log(20)//log(2)) ... *19
+= 232792560
+'''
