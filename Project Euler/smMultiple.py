@@ -99,3 +99,26 @@ n is the number we put into the function.
 f(20) = 2^(log(20)//log(2)) * 3^(log(20)//log(3)) * 5^(log(20)//log(2)) ... *19
 = 232792560
 '''
+import math
+def isPrime(p):
+    prime = 1
+    check = 2
+    while prime == 1 and check <= math.sqrt(p):
+        if p % check == 0:
+            prime = 0
+        check += check % 2 + 1
+    return prime == 1
+
+def f(n):
+    if n == 1:
+        return 1
+    else:
+        product = 2 ** int(math.log(n) / math.log(2))
+        k = 3
+        while k <= n:
+            if isPrime(k):
+                product *= k ** int(math.log(n) / math.log(k))
+            k += 2
+        return product
+
+print(f(20))
