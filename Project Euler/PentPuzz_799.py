@@ -16,35 +16,62 @@ find the smallest pentagonal number that can be expressed as sum of
 two pentagonal numbers in over 100 different ways
 
 create function to get list of pentagonal numbers
-smallest pentagonal number means start from largest target number
-get next smallest number (n-1) and check add starting at first number
-    if there is sum count inc
-get (n-2) and check add starting at first number
-keep going until you get count = 100 sums
+start from smallest target number
+first number = 0
+last number = -1
+while target didn't reach end of list <= len(p)-1:
+    while last number didn't reach available 102 
+        while first p of number < p of last
+            last number (-1) + first number (0) = sum of two pentagonal numbers
+            if sum is == target number then
+                count inc, found count matching sum 
+                print found count sum of last number and first number 
+                last number - 1 to go to next last number
+                first number has to be greater than where prev sum was found
+            else: try another first number + 1
+        last number reached all available 102 to add to firsts
+        reset last number = -1
+        reset first number = 0
+    increase target number + 1 until end of list is reached
+    count = 0 resets count for another target number
+    target number reached end of list
 '''
+from tabnanny import check
+
+
 def pent_List(n):
     a = []
     for i in range(1, n+1):
         a.append(int(1/2 * i * ( 3 * i - 1 )))
     return a
 p = (pent_List(500))
-
+print(p)
 first = 0
-last = -2
-target = 0
+last = -1
+target = 1
 count = 0
-while target <= len(p)-2:
+while target < len(p)-1:
     while last >= -len(p)+1:
-        while first < len(p)//2:
-            if (p[last] + p[first]) == p[target]:
+        while p[first] < p[last]-1:
+            # print('checkSum = ', p[first], ' + ', p[last])
+            checkSum = p[first] + p[last] 
+            # print('comparing ... ', checkSum, ' == ', p[target])
+            if checkSum == p[target]:
                 count += 1
-                print('found ', count, ' different ways for ', p[target], ' p(', target+1,')')
-                last -= 1 # check next last value since sum found
-                first = 0
+                # print('found ', count, ' sum for ', p[target])
+                # print(' p of ', target+1,' = ', p[first], ' + ', p[last])
+                # print(' p[first] = ', first, ' p[last] = ', last)
+                last -= 1 
             first += 1 # increse first when no sum found
+            # print('first is inc to ', p[first])
         last -= 1
+        # print('last is dec to ', p[last])
         first = 0
-    count = 0
     target += 1
-    last = -2 
+    if count > 1:
+        print('count for ', p[target-1], ', at p(', target, ') is ', count)
+    # print('target is inc to ', p[target])
+    count = 0
+    # print('count is now reset ', count)
+    last = -1
     first = 0
