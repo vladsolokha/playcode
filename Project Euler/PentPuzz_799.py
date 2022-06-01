@@ -36,27 +36,21 @@ while target didn't reach end of list <= len(p)-1:
     count = 0 resets count for another target number
     target number reached end of list
 '''
-from tabnanny import check
-
-
 def pent_List(n):
     a = []
     for i in range(1, n+1):
         a.append(int(1/2 * i * ( 3 * i - 1 )))
     return a
-p = (pent_List(500))
-print(p)
+p = (pent_List(15000))
+print(p[len(p)-1])
 first = 0
-last = -1
-target = 1
+target = len(p)-1
+last = target-1
 count = 0
-while target < len(p)-1:
-    while last >= -len(p)+1:
-        while p[first] < p[last]-1:
-            # print('checkSum = ', p[first], ' + ', p[last])
-            checkSum = p[first] + p[last] 
-            # print('comparing ... ', checkSum, ' == ', p[target])
-            if checkSum == p[target]:
+while target >= 1:
+    while last >= first:
+        while first < last:
+            if p[first] + p[last] == p[target]:
                 count += 1
                 # print('found ', count, ' sum for ', p[target])
                 # print(' p of ', target+1,' = ', p[first], ' + ', p[last])
@@ -65,13 +59,10 @@ while target < len(p)-1:
             first += 1 # increse first when no sum found
             # print('first is inc to ', p[first])
         last -= 1
-        # print('last is dec to ', p[last])
         first = 0
-    target += 1
-    if count > 1:
-        print('count for ', p[target-1], ', at p(', target, ') is ', count)
-    # print('target is inc to ', p[target])
+    if count >= 2:
+        print('count for ', p[target], ', at p(', target+1, ') is ', count)
+    target -= 1
+    last = target-1
     count = 0
-    # print('count is now reset ', count)
-    last = -1
     first = 0
