@@ -43,26 +43,22 @@ def pent_List(n):
     return a
 p = (pent_List(15000))
 print(p[len(p)-1])
-first = 0
+first, first_saved = 0,0
 target = len(p)-1
 last = target-1
 count = 0
 while target >= 1:
-    while last >= first:
-        while first < last:
-            if p[first] + p[last] == p[target]:
-                count += 1
-                # print('found ', count, ' sum for ', p[target])
-                # print(' p of ', target+1,' = ', p[first], ' + ', p[last])
-                # print(' p[first] = ', first, ' p[last] = ', last)
-                last -= 1 
-            first += 1 # increse first when no sum found
-            # print('first is inc to ', p[first])
-        last -= 1
-        first = 0
-    if count >= 2:
+    while first < last:
+        if p[first] + p[last] == p[target]:
+            print('p(',first+1,')+p(',last+1,')=p(',target+1,')')
+            count += 1
+            last -= 1 
+            first += 1
+        else:
+            first += 1 
+    if count >= 1:
         print('count for ', p[target], ', at p(', target+1, ') is ', count)
     target -= 1
-    last = target-1
-    count = 0
+    last -= 1
     first = 0
+    count = 0
